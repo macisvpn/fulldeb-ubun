@@ -100,7 +100,7 @@ cd /etc/openvpn/
 tar xf openvpn.tar
 wget -O /etc/openvpn/1194.conf "https://raw.githubusercontent.com/macisvpn/fulldeb-ubun/master/centosv/1194-centos.conf"
 if [ "$OS" == "x86_64" ]; then
-  wget -O /etc/openvpn/1194.conf "http://script.fawzya.net/centos/conf/1194-centos64.conf"
+  wget -O /etc/openvpn/1194.conf "https://raw.githubusercontent.com/macisvpn/fulldeb-ubun/master/centosv/1194-centos64.conf"
 fi
 wget -O /etc/iptables.up.rules "https://raw.githubusercontent.com/macisvpn/fulldeb-ubun/master/centosv/iptables.up.rules"
 sed -i '$ i\iptables-restore < /etc/iptables.up.rules' /etc/rc.local
