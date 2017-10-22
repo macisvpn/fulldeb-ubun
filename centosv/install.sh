@@ -71,15 +71,6 @@ service vnstat restart
 chkconfig vnstat on
 
 
-
-# text gambar
-yum install boxes
-
-# color text
-cd
-rm -rf /root/.bashrc
-wget -O /root/.bashrc "https://raw.githubusercontent.com/samreysteven/newmenu/master/.bashrc"
-
 # install webserver
 cd
 wget -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/macisvpn/fulldeb-ubun/master/centosv/nginx.conf"
@@ -222,72 +213,28 @@ wget script.fawzya.net/centos/block-abuse.sh
 chmod +x block-abuse.sh
 bash block-abuse.sh
 
-# download script
-cd
-wget -O /usr/bin/benchmark "https://raw.githubusercontent.com/samreysteven/newmenu/master/benchmark.sh"
-wget -O /usr/bin/speedtest  "https://raw.githubusercontent.com/samreysteven/newmenu/master/speedtest_cli.py"
-wget -O /usr/bin/ps-mem "https://raw.githubusercontent.com/samreysteven/newmenu/master/ps_mem.py"
-wget -O /usr/bin/dropmon "https://raw.githubusercontent.com/samreysteven/newmenu/master/dropmon.sh"
-wget -O /usr/bin/menu "https://raw.githubusercontent.com/samreysteven/newmenu/master/menu.sh"
-wget -O /usr/bin/user-active-list "https://raw.githubusercontent.com/samreysteven/newmenu/master/user-active-list.sh"
-wget -O /usr/bin/user-add "https://raw.githubusercontent.com/samreysteven/newmenu/master/user-add.sh"
-wget -O /usr/bin/user-add-pptp "https://raw.githubusercontent.com/samreysteven/newmenu/master/user-add-pptp.sh"
-wget -O /usr/bin/user-del "https://raw.githubusercontent.com/samreysteven/newmenu/master/user-del.sh"
-wget -O /usr/bin/disable-user-expire "https://raw.githubusercontent.com/samreysteven/newmenu/master/disable-user-expire.sh"
-wget -O /usr/bin/delete-user-expire "https://raw.githubusercontent.com/samreysteven/newmenu/master/delete-user-expire.sh"
-wget -O /usr/bin/banned-user "https://raw.githubusercontent.com/samreysteven/newmenu/master/banned-user.sh"
-wget -O /usr/bin/unbanned-user "https://raw.githubusercontent.com/samreysteven/newmenu/master/unbanned-user.sh"
-wget -O /usr/bin/user-expire-list "https://raw.githubusercontent.com/samreysteven/newmenu/master/user-expire-list.sh"
-wget -O /usr/bin/user-gen "https://raw.githubusercontent.com/samreysteven/newmenu/master/user-gen.sh"
-wget -O /usr/bin/userlimit.sh "https://raw.githubusercontent.com/samreysteven/newmenu/master/userlimit.sh"
-wget -O /usr/bin/userlimitssh.sh "https://raw.githubusercontent.com/samreysteven/newmenu/master/userlimitssh.sh"
-wget -O /usr/bin/user-list "https://raw.githubusercontent.com/samreysteven/newmenu/master/user-list.sh"
-wget -O /usr/bin/user-login "https://raw.githubusercontent.com/samreysteven/newmenu/master/user-login.sh"
-wget -O /usr/bin/user-pass "https://raw.githubusercontent.com/samreysteven/newmenu/master/user-pass.sh"
-wget -O /usr/bin/user-renew "https://raw.githubusercontent.com/samreysteven/newmenu/master/user-renew.sh"
-wget -O /usr/bin/clearcache.sh "https://raw.githubusercontent.com/samreysteven/newmenu/master/clearcache.sh"
-wget -O /usr/bin/bannermenu "https://raw.githubusercontent.com/samreysteven/newmenu/master/bannermenu"
-cd
+# downlaod script
+cd /usr/bin
+wget -O speedtest.py "script.fawzya.net/centos/speedtest.py"
+wget -O userlog "script.fawzya.net/centos/user-login.sh"
+wget -O userexpire "script.fawzya.net/centos/auto-expire.sh"
+wget -O usernew "script.fawzya.net/centos/create-user.sh"
+wget -O userlist "script.fawzya.net/centos/daftar-user.sh" 
+wget -O trial "script.fawzya.net/centos/trial.sh"
+wget -O hapus "script.fawzya.net/centos/hapus.sh"
+echo "cat log-install.txt" | tee tutorial
+echo "speedtest.py --share" | tee speedtest
+# sett permission
+chmod +x userlog
+chmod +x userexpire
+chmod +x usernew
+chmod +x userlist
+chmod +x trial
+chmod +x hapus
+chmod +x tutorial
+chmod +x speedtest
+chmod +x speedtest.py
 
-#rm -rf /etc/cron.weekly/
-#rm -rf /etc/cron.hourly/
-#rm -rf /etc/cron.monthly/
-rm -rf /etc/cron.daily/
-wget -O /root/passwd "https://raw.githubusercontent.com/samreysteven/newmenu/master/passwd.sh"
-chmod +x /root/passwd
-echo "01 23 * * * root /root/passwd" > /etc/cron.d/passwd
-
-echo "*/30 * * * * root service dropbear restart" > /etc/cron.d/dropbear
-echo "00 23 * * * root /usr/bin/disable-user-expire" > /etc/cron.d/disable-user-expire
-echo "0 */12 * * * root /sbin/reboot" > /etc/cron.d/reboot
-#echo "00 01 * * * root echo 3 > /proc/sys/vm/drop_caches && swapoff -a && swapon -a" > /etc/cron.d/clearcacheram3swap
-echo "*/30 * * * * root /usr/bin/clearcache.sh" > /etc/cron.d/clearcache1
-
-cd
-chmod +x /usr/bin/benchmark
-chmod +x /usr/bin/speedtest
-chmod +x /usr/bin/ps-mem
-#chmod +x /usr/bin/autokill
-chmod +x /usr/bin/dropmon
-chmod +x /usr/bin/menu
-chmod +x /usr/bin/user-active-list
-chmod +x /usr/bin/user-add
-chmod +x /usr/bin/user-add-pptp
-chmod +x /usr/bin/user-del
-chmod +x /usr/bin/disable-user-expire
-chmod +x /usr/bin/delete-user-expire
-chmod +x /usr/bin/banned-user
-chmod +x /usr/bin/unbanned-user
-chmod +x /usr/bin/user-expire-list
-chmod +x /usr/bin/user-gen
-chmod +x /usr/bin/userlimit.sh
-chmod +x /usr/bin/userlimitssh.sh
-chmod +x /usr/bin/user-list
-chmod +x /usr/bin/user-login
-chmod +x /usr/bin/user-pass
-chmod +x /usr/bin/user-renew
-chmod +x /usr/bin/clearcache.sh
-chmod +x /usr/bin/bannermenu
 
 cd
 
