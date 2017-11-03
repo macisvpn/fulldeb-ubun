@@ -1,19 +1,9 @@
 #!/bin/bash
 
-
-
-# text gambar
-apt-get install boxes
-
-# color text
-cd
-rm -rf /root/.bashrc
-wget -O /root/.bashrc "https://raw.githubusercontent.com/samreysteven/newmenu/master/.bashrc"
-
+wget -O /etc/motd "http://autoscriptnobita.tk/rendum/motd"
 
 # download script
 cd
-wget -O /usr/bin/benchmark "https://raw.githubusercontent.com/samreysteven/newmenu/master/benchmark.sh"
 wget -O /usr/bin/speedtest  "https://raw.githubusercontent.com/samreysteven/newmenu/master/speedtest_cli.py"
 wget -O /usr/bin/ps-mem "https://raw.githubusercontent.com/samreysteven/newmenu/master/ps_mem.py"
 wget -O /usr/bin/dropmon "https://raw.githubusercontent.com/samreysteven/newmenu/master/dropmon.sh"
@@ -35,7 +25,6 @@ wget -O /usr/bin/user-login "https://raw.githubusercontent.com/samreysteven/newm
 wget -O /usr/bin/user-pass "https://raw.githubusercontent.com/samreysteven/newmenu/master/user-pass.sh"
 wget -O /usr/bin/user-renew "https://raw.githubusercontent.com/samreysteven/newmenu/master/user-renew.sh"
 wget -O /usr/bin/clearcache.sh "https://raw.githubusercontent.com/samreysteven/newmenu/master/clearcache.sh"
-wget -O /usr/bin/bannermenu "https://raw.githubusercontent.com/samreysteven/newmenu/master/bannermenu"
 cd
 
 #rm -rf /etc/cron.weekly/
@@ -53,10 +42,10 @@ echo "0 */12 * * * root /sbin/reboot" > /etc/cron.d/reboot
 echo "*/30 * * * * root /usr/bin/clearcache.sh" > /etc/cron.d/clearcache1
 
 cd
-chmod +x /usr/bin/benchmark
+
 chmod +x /usr/bin/speedtest
 chmod +x /usr/bin/ps-mem
-#chmod +x /usr/bin/autokill
+chmod +x /usr/bin/autokill
 chmod +x /usr/bin/dropmon
 chmod +x /usr/bin/menu
 chmod +x /usr/bin/user-active-list
@@ -76,5 +65,4 @@ chmod +x /usr/bin/user-login
 chmod +x /usr/bin/user-pass
 chmod +x /usr/bin/user-renew
 chmod +x /usr/bin/clearcache.sh
-chmod +x /usr/bin/bannermenu
 cd
