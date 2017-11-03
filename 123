@@ -1,15 +1,14 @@
 #!/bin/bash
 
-wget -O /etc/motd "http://autoscriptnobita.tk/rendum/motd"
+
 
 # download script
 cd
 wget -O /usr/bin/speedtest  "https://raw.githubusercontent.com/samreysteven/newmenu/master/speedtest_cli.py"
 wget -O /usr/bin/ps-mem "https://raw.githubusercontent.com/samreysteven/newmenu/master/ps_mem.py"
 wget -O /usr/bin/dropmon "https://raw.githubusercontent.com/samreysteven/newmenu/master/dropmon.sh"
-wget -O /usr/bin/menu "https://raw.githubusercontent.com/macisvpn/fulldeb-ubun/master/menu.sh"
+wget -O /usr/bin/menu "https://raw.githubusercontent.com/macisvpn/fulldeb-ubun/master/y/menu.sh"
 wget -O /usr/bin/user-active-list "https://raw.githubusercontent.com/samreysteven/newmenu/master/user-active-list.sh"
-wget -O /usr/bin/user-add "https://raw.githubusercontent.com/samreysteven/newmenu/master/user-add.sh"
 wget -O /usr/bin/user-add-pptp "https://raw.githubusercontent.com/samreysteven/newmenu/master/user-add-pptp.sh"
 wget -O /usr/bin/user-del "https://raw.githubusercontent.com/samreysteven/newmenu/master/user-del.sh"
 wget -O /usr/bin/disable-user-expire "https://raw.githubusercontent.com/samreysteven/newmenu/master/disable-user-expire.sh"
